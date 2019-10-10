@@ -1,0 +1,6 @@
+<div *ngIf='bAffichage'>{{authentificationMessage}}</div>
+<div>
+Nom de l'utilisateur: <input type="text" name="username" value={{username}} [(ngModel)]="username">
+Mot de passe: <input type="password" name="password" value={{password}}>
+<button (click)=authentification()>Login</button>
+</div>
