@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,11 +11,12 @@ export class LoginComponent implements OnInit {
   password = 'mycms'
   authentificationMessage = 'Authnetification invalide'
   bAffichage: boolean = false
-  constructor() { }
+  constructor(private router:Router) { }
   ngOnInit() { }
 
   authentification() {
     if (this.username === 'sebastien' && this.password === 'mycms') {
+      this.router.navigate(['bienvenue', this.username])
       this.bAffichage = false
     } else {
       this.bAffichage = true
